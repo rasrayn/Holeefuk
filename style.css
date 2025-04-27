@@ -50,7 +50,7 @@ body {
 .btn__nav {
     display: flex;
     flex-direction: column;
-    gap: .4rem;
+    gap: .5rem;
     background-color: transparent;
     border-style: none;
     padding: 1rem;
@@ -58,7 +58,7 @@ body {
 }
 
 .header__nav-logo {
-    width: 2rem;
+    width: 2.5rem;
     height: .2rem;
     background-color: var(--colorContraste);
     
@@ -85,7 +85,7 @@ body {
         position: fixed; /* Para que se mantenga en la ventana aunque se haga scroll */
         top: 0;
         right: -300px; /* Inicialmente oculto a la derecha (ajusta el valor según el ancho de tu menú) */
-        width: 25rem; /* Ancho del menú */
+        width: 80%; /* Ancho del menú */
         height: 75%;
         background-color: #1A1A1A; /* Color de fondo del menú */
         box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1); /* Sombra opcional */
