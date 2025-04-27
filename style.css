@@ -141,7 +141,7 @@ body {
     position: absolute !important;
     right: 0;/* Para que ocupe toda la pantalla */
     top: 0;/* Para que ocupe toda la pantalla */
-    background-image: src("../Recursos/hadns-draeing-tattoo-arm-with-needle-machine.jpg");
+    background-image: url(../Recursos/hands-drawing-tattoo-arm-with-needle-machine.jpg);
     filter: brightness(25%);
 }
 
