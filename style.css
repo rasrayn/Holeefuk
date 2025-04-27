@@ -1,0 +1,147 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+*,
+*::after,
+*::before {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    --colorPrincipal: #1d2120;
+    --colorContraste: #f2f3ae;
+    --colorDestacado1: #69140e;
+    --colorDestacado2: #a44200;
+    --colorDestacado3: #d58936;
+}
+
+body {
+    font-family: "collegiate", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Ubuntu, "Helvetica Neue", sans-serif;
+    background-color: var(--colorPrincipal);
+    color: var(--colorContraste);
+    line-height: 1.5;
+}
+
+.titulo__header {
+    width: auto;
+    margin-top: 1.5rem;
+}
+
+.hlf{
+    text-align: center;
+}
+
+.subtitulo__header {
+    text-align: center;
+    font-size: .8rem;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+}
+
+.btn__menu { 
+    background-color: var(--colorPrincipals);
+    width: 2.5rem;
+    order: 3;
+    margin: 3rem 4rem 0 0;
+    z-index: 1001; /* Asegura que el botón esté por encima del menú */
+}
+
+.btn__nav {
+    display: flex;
+    flex-direction: column;
+    gap: .2rem;
+    background-color: var(--colorPrincipal);
+    border-style: none;
+    padding: 1rem;
+    cursor: pointer;
+}
+
+.header__nav-logo {
+    width: 1.5rem;
+    height: .2rem;
+    background-color: var(--colorContraste);
+    
+
+}
+
+#logo1 {
+    border-radius: 20px;
+    top: 1.5rem;
+}
+
+#logo2 {
+    border-radius: 20px;
+
+}
+
+#logo3 {
+    border-radius: 20px;
+    bottom: 1rem;
+
+}
+
+.navbar__header{
+        position: fixed; /* Para que se mantenga en la ventana aunque se haga scroll */
+        top: 0;
+        right: -300px; /* Inicialmente oculto a la derecha (ajusta el valor según el ancho de tu menú) */
+        width: 300px; /* Ancho del menú */
+        height: 75%;
+        background-color: #1A1A1A; /* Color de fondo del menú */
+        box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1); /* Sombra opcional */
+        transition: right 0.3s ease-in-out; /* Transición suave para la propiedad 'right' */
+        z-index: 1000; /* Asegura que esté por encima de otros elementos */
+        list-style-type: none; /* Elimina los puntos de la lista */
+        
+    }
+
+.navbar__header.abierto {
+        right: 0; /* Muestra el menú al hacer clic */
+    }
+
+#overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Color negro con 50% de opacidad */
+    z-index: 999; /* Debe estar por encima del contenido principal pero debajo del menú */
+    opacity: 0; /* Inicialmente invisible */
+    visibility: hidden; /* Inicialmente oculto para que no interfiera con los clics */
+    transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out; /* Transición suave para opacidad y visibilidad */
+}
+
+#overlay.activo {
+    opacity: 1; /* Cuando la clase 'activo' se añade, la capa se vuelve visible */
+    visibility: visible;
+}
+
+/***********PANTALLA MENU*****************/
+
+.navbar__header li a {
+    text-decoration: none;
+    color: var(--colorContraste);
+    padding: 1.5rem;
+}
+
+.navbar__header-item{
+    margin: 3.5rem 0 0 2rem;
+    font-size: 1.5rem;
+}
+
+/*******************BG IMAGEN****************/
+
+.bg__div-container{
+    z-index: -100;
+    background-position: 50% 50%;
+    background-size: cover;
+    bottom: 0;
+    left: 0;
+    position: absolute !important;
+    right: 0;/* Para que ocupe toda la pantalla */
+    top: 0;/* Para que ocupe toda la pantalla */
+    background-image: url(../Recursos/hands-drawing-tattoo-arm-with-needle-machine.jpg);
+    filter: brightness(25%);
+}
+
