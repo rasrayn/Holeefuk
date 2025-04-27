@@ -84,7 +84,7 @@ body {
 .navbar__header{
         position: fixed; /* Para que se mantenga en la ventana aunque se haga scroll */
         top: 0;
-        right: -800px; /* Inicialmente oculto a la derecha (ajusta el valor según el ancho de tu menú) */
+        right: -100%; /* Inicialmente oculto a la derecha (ajusta el valor según el ancho de tu menú) */
         width: 80%; /* Ancho del menú */
         height: 75%;
         background-color: #1A1A1A; /* Color de fondo del menú */
