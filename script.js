@@ -17,3 +17,11 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
+document.addEventListener('DOMContentLoaded', function() {
+    const desaparecerLogo = document.querySelector('.btn__nav');
+    const logo = document.querySelector('#ocultar-img');
+
+    desaparecerLogo.addEventListener('click', () => {
+        logo.classList.toggle('ocultar');
+    });
+});
