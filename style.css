@@ -18,26 +18,17 @@ body {
     background-color: var(--colorPrincipal);
     color: var(--colorContraste);
     line-height: 1.5;
+    scroll-behavior: smooth;
 }
 
-.titulo__header {
-    width: auto;
-    margin-top: 1.5rem;
-}
-
-.hlf{
-    text-align: center;
-}
-
-.subtitulo__header {
-    text-align: center;
-    font-size: .8rem;
-}
+/**********HEADER******************/
 
 .header {
     display: flex;
     justify-content: space-between;
 }
+
+/***********MENU******************/
 
 .btn__menu { 
     background-color: var(--colorPrincipals);
@@ -45,6 +36,9 @@ body {
     order: 3;
     margin: 3rem 4rem 0 0;
     z-index: 1001; /* Asegura que el botón esté por encima del menú */
+    position: fixed;
+    top: 0;
+    right: 0;
 }
 
 .btn__nav {
@@ -88,16 +82,19 @@ body {
         width: 80%; /* Ancho del menú */
         height: 75%;
         background-color: #1A1A1A; /* Color de fondo del menú */
-        box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1); /* Sombra opcional */
+        box-shadow: -2px 0 10px #111; /* Sombra opcional */
         transition: right 0.3s ease-in-out; /* Transición suave para la propiedad 'right' */
         z-index: 1000; /* Asegura que esté por encima de otros elementos */
         list-style-type: none; /* Elimina los puntos de la lista */
-        
+        border-radius: 5px;
     }
 
 .navbar__header.abierto {
         right: 0; /* Muestra el menú al hacer clic */
     }
+
+/**********OVERLAY******************/
+/* Capa de superposición que cubre el contenido principal cuando el menú está abierto */    
 
 #overlay {
     position: fixed;
@@ -110,6 +107,7 @@ body {
     opacity: 0; /* Inicialmente invisible */
     visibility: hidden; /* Inicialmente oculto para que no interfiera con los clics */
     transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out; /* Transición suave para opacidad y visibilidad */
+    
 }
 
 #overlay.activo {
@@ -119,7 +117,7 @@ body {
 
 
 #ocultar-img.ocultar{
-    opacity: .1;
+    opacity: 0;
 }
 
 /***********PANTALLA MENU*****************/
@@ -150,3 +148,63 @@ body {
     filter: brightness(25%);
 }
 
+/***********TITULO******************/
+.titulo__header {
+    width: auto;
+    margin-top: 1.5rem;
+    view-timeline: --ocultar block;
+    animation-timeline: --ocultar;
+    animation-name: fadeIn;
+    animation-range: 60%;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+
+.hlf{
+    margin-top: 8rem;
+    text-align: center;
+    font-size: 4.5rem;
+    font-weight: 900;
+    color: transparent;
+    -webkit-text-stroke: 1px var(--colorContraste);
+    font-family: 'collegiate', sans-serif;
+    text-shadow: 2px 0px 15px var(--colorDestacado3);
+    width: auto;
+}
+
+.subtitulo__header {
+    margin-top: 2rem;
+    text-align: center;
+    font-size: 1.2rem;
+}
+
+
+
+.page__container{
+    position: absolute;
+    top: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    margin: 2.5rem 0 0 1.5rem;
+}
+
+.titulo__seccion1{
+    font-size: 2.5rem;
+    text-align: center;
+    color: var(--colorContraste);
+    text-shadow: 2px 1px 8px #000;
+    font-family: 'collegiate', sans-serif;
+}
+
+.list__tattoos {
+    list-style: none;
+}

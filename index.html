@@ -28,30 +28,29 @@
             </ul>
         </nav>
     </header>
-    <section class="titulo__header">
-        <h1 class="hlf">HOLEEFUK</h1>
+    <section class="titulo__header rellax">
+        <h1 class="hlf" >HOLEEFUK</h1>
         <h2 class="subtitulo__header"> ESTUDIO DE <strong>TATUAJES</strong> Y PIERCINGS</h2>
     </section>
-    <div class="bg__div-container">
-        
-    </div>
-<!--seccion.1 -->
-    <main>
+    <div class="bg__div-container"></div>  
+    <!--seccion.1 -->
+    <div class="page__container">
+        <section class="secction__project" id="services">
+            <h2 class="titulo__seccion1">TATTOOS</h2>
+                
+            <ul class="list__tattoos">
+                <li>Custom Tattoos</li>
+                <li>Tattoo Cover-ups</li>
+                <li>Tattoo Aftercare</li>
+            </ul>
+        </section>
+    <!--seccion.2 -->
         <section class="secction__about" id="about">
             <h2>SOBRE MI</h2>
             <p>We are a professional tattoo studio dedicated to providing high-quality tattoos and a comfortable experience.</p>
         </section>
-            <!--seccion.2 -->
-        <section id="services">
-                <h2>TATTOS</h2>
-                <ul>
-                    <li>Custom Tattoos</li>
-                    <li>Tattoo Cover-ups</li>
-                    <li>Tattoo Aftercare</li>
-                </ul>
-        </section>
-            <!--seccion.3 -->
-        <section id="contact">
+    <!--seccion.3 -->
+        <section class="section__reservar" id="contact">
                 <h2>RESERVA UNA LLAMADA</h2>
                 <form action="#" method="post">
                     <label for="name">Name:</label><br>
@@ -63,11 +62,22 @@
                     <input type="submit" value="Submit">
                 </form>
         </section>
-    </main>
-        <!--footer-->
-    <footer>
-        <p>&copy; 2023 Holeefuktattoo. All rights reserved.</p>
-    </footer>
+    <!--footer-->
+        <footer class="footer__container">
+            <p>&copy; 2023 Holeefuktattoo. All rights reserved.</p>
+        </footer>
+    </div>  
     <script src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/dixonandmoe/rellax@master/rellax.min.js"></script>
+    <script>
+    // Accepts any class name
+        var rellax = new Rellax('.rellax', {
+            speed: 2,
+            center: false,
+            round: true,
+            vertical: true,
+            horizontal: false
+        });
+    </script>
 </body>
 </html>
