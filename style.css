@@ -11,6 +11,9 @@
     --colorDestacado1: #69140e;
     --colorDestacado2: #a44200;
     --colorDestacado3: #d58936;
+    --width: 7rem;  /* Ancho de cada elemento del slider */
+    --height: 8rem; /* Alto de cada elemento del slider */
+    --quantity: 5;  /* Cantidad de elementos en el slider */
 }
 
 body {
@@ -193,18 +196,76 @@ body {
     top: 100%;
     display: flex;
     flex-direction: column;
-    gap: 2rem;
-    margin: 2.5rem 0 0 1.5rem;
+    gap: 10rem;
+    margin: 0;
+    background-color: #fff;
 }
 
 .titulo__seccion1{
+    color: var(--colorPrincipal);
+    margin-bottom: 5rem;
+    margin-top: 5rem;
     font-size: 2.5rem;
     text-align: center;
-    color: var(--colorContraste);
     text-shadow: 2px 1px 8px #000;
     font-family: 'collegiate', sans-serif;
 }
 
-.list__tattoos {
-    list-style: none;
+/***********SLIDER******************/
+
+.slider {
+    width: 100dvw;
+    height: 30dvh;
+    overflow: hidden;
 }
+
+.slider .list__slider {
+    display: flex;
+    width: 100%;
+    position: relative;
+    top: 1rem;
+}
+
+
+
+.slider .list__slider .item img {
+    width: 20dvw;
+    height: 25dvh;
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow: 0 0 10px var(--colorPrincipal);
+}
+
+.slider .list__slider .item {
+    position: absolute;
+    left: 100%;
+    animation: autoRun 10s linear infinite;
+    animation-delay: calc( (10s / var(--quantity)) * (var(--position) - 1) - 10s) !important;
+}
+
+.item1 {
+    animation-delay: 0s;
+}
+.item2 {
+    animation-delay: 2s;
+}
+.item3 {
+    animation-delay: 4s;
+}
+.item4 {
+    animation-delay: 6s;
+}
+.item5 {
+    animation-delay: 8s;
+    
+
+}
+
+@keyframes autoRun {
+    from {
+        left: 100%;
+    }to {
+        left: calc(var(--width) * -1);
+    }
+}
+
