@@ -32,17 +32,17 @@ function getResponsiveThreshold() {
     const width = window.innerWidth;
 
     if (width >= 1024) {
-        return 0.95; // En pantallas grandes, 50% del elemento debe ser visible
+        return 0.6;
     } else if (width >= 768 && width < 1024) {
-        return 0.82; // En pantallas medianas, 60% del elemento debe ser visible
+        return 0.82; 
     } else if (width >= 500 && width < 768) {
-        return 0.7; // En pantallas pequeñas, 40% del elemento debe ser visible
+        return 0.7;
     } else if (width >= 400) {
-        return 0.85; // En tablets, 30%
+        return 0.7;
     } else  if (width < 400 && width > 370) {
-        return 0.76; // En móviles, 10%
+        return 0.65;
     } else if (width < 370 && width > 320) {
-        return 0.8; // En móviles, 10%
+        return 0.8;
     }
 }
 const btnObserver = new IntersectionObserver((entries) => {
