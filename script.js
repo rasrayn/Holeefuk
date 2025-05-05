@@ -25,3 +25,57 @@ document.addEventListener('DOMContentLoaded', function() {
         logo.classList.toggle('ocultar');
     });
 });
+
+/************ BOTON MENÚ CLARO-OSCURO *******************/
+// Función para obtener el threshold dinámicamente según el ancho de la pantalla
+function getResponsiveThreshold() {
+    const width = window.innerWidth;
+
+    if (width >= 1024) {
+        return 0.95; // En pantallas grandes, 50% del elemento debe ser visible
+    } else if (width >= 768 && width < 1024) {
+        return 0.82; // En pantallas medianas, 60% del elemento debe ser visible
+    } else if (width >= 500 && width < 768) {
+        return 0.7; // En pantallas pequeñas, 40% del elemento debe ser visible
+    } else if (width >= 400) {
+        return 0.85; // En tablets, 30%
+    } else  if (width < 400 && width > 370) {
+        return 0.76; // En móviles, 10%
+    } else if (width < 370 && width > 320) {
+        return 0.8; // En móviles, 10%
+    }
+}
+const btnObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+    const btn = document.querySelector('.header__nav-logo1');
+    const btn2 = document.querySelector('.header__nav-logo2');
+    const btn3 = document.querySelector('.header__nav-logo3');
+    if (entry.isIntersecting) {
+        //boton 1
+        btn.classList.remove('claro');
+        btn.classList.add('oscuro');
+        //boton 2
+        btn2.classList.remove('claro');
+        btn2.classList.add('oscuro');
+        //boton 3
+        btn3.classList.remove('claro');
+        btn3.classList.add('oscuro');
+        
+        
+        } else {
+            //boton 1
+            btn.classList.remove('oscuro');
+            btn.classList.add('claro');
+            //boton 2
+            btn2.classList.remove('oscuro');
+            btn2.classList.add('claro');
+            //boton 3
+            btn3.classList.remove('oscuro');
+            btn3.classList.add('claro');
+            
+        }
+    });
+}, { threshold: getResponsiveThreshold() }); // el 64% del elemento debe ser visible para que se active el callback
+
+btnObserver.observe(document.getElementById('bg__claro'));
+
