@@ -221,7 +221,7 @@ body {
 
 .slider {
     width: 100dvw;
-    height: 30dvh;
+    height: 25dvh;
     overflow: hidden;
 }
 
@@ -288,10 +288,14 @@ body {
 .slider:hover .item {
     animation-play-state: paused !important; /* Pausa la animación al pasar el mouse */
     filter: brightness(0.3);
+    filter: blur(15px);
+    height: auto;
 }
 
 .slider .item:hover {
     filter: brightness(1);
+    box-shadow: 0 0 20px var(--colorPrincipal);
+    z-index: 500;
     transform: scale(1.5); /* Aumenta el tamaño al pasar el mouse */
 }
 

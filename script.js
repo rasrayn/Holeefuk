@@ -36,6 +36,8 @@ function getResponsiveThreshold() {
             return 0.5; 
         } else if (width >= 500 && width < 768) {
             return 0.65;
+        }else {
+            return 0.55; // Para pantallas más pequeñas
         }
 }
 const btnObserver = new IntersectionObserver((entries) => {
