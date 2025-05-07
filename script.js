@@ -30,20 +30,13 @@ document.addEventListener('DOMContentLoaded', function() {
 // Función para obtener el threshold dinámicamente según el ancho de la pantalla
 function getResponsiveThreshold() {
     const width = window.innerWidth;
-
-    if (width >= 1024) {
-        return 0.6;
-    } else if (width >= 768 && width < 1024) {
-        return 0.82; 
-    } else if (width >= 500 && width < 768) {
-        return 0.7;
-    } else if (width >= 400) {
-        return 0.7;
-    } else  if (width < 400 && width > 370) {
-        return 0.65;
-    } else if (width < 370 && width > 320) {
-        return 0.8;
-    }
+        if (width >= 1024) {
+            return 0.5;
+        } else if (width >= 768 && width < 1024) {
+            return 0.5; 
+        } else if (width >= 500 && width < 768) {
+            return 0.65;
+        }
 }
 const btnObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
